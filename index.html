@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Counter</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+
+    <h2 class="text-center">Personal Counter</h2>
+
+    <div class="project-counter-wrp">
+        <ul>
+            <li>
+                <i class="fa fa-smile-o"></i>
+                <p id="number1" class="number"></p>
+                <span></span>
+                <p>Current Day</p>
+            </li>
+            <li>
+                <i class="fa fa-calendar"></i>
+                <p id="number2" class="number"></p>
+                <span></span>
+                <p>Days Left for target</p>
+            </li>
+            <li>
+                <i class="fa fa-spinner"></i>
+                <p id="number3" class="number"></p>
+                <span></span>
+                <p>Progress</p>
+            </li>
+        </ul>
+    </div>
+    <div class="w3-light-grey">
+        <div class="w3-teal" style="height:24px" id='progress_bar'></div>
+    </div>
+
+    <script>  
+        var d1 = new Date("01/06/2022");   
+        var d2 = new Date();   
+            
+        var diff = d2.getTime() - d1.getTime();   
+            
+        var daydiff = diff / (1000 * 60 * 60 * 24);   
+        document.getElementById("number1").innerHTML = Math.floor(daydiff+1);
+        document.getElementById("number2").innerHTML = Math.floor(90-daydiff); 
+        let perentage_days = (Math.floor(daydiff+1)/90)*100;
+        document.getElementById("number3").innerHTML = perentage_days.toFixed(2) + '%';
+        document.getElementById("progress_bar").style.width = perentage_days+'%';  
+    </script>  
+</body>
+
+</html>
