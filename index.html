@@ -30,7 +30,7 @@
                 <p>Days Left for target</p>
             </li>
             <li>
-                <i class="fa fa-spinner"></i>
+                <i class="fa fa-percent"></i>
                 <p id="number3" class="number"></p>
                 <span></span>
                 <p>Progress</p>
@@ -51,7 +51,7 @@
         document.getElementById("number1").innerHTML = Math.floor(daydiff+1);
         document.getElementById("number2").innerHTML = Math.floor(90-daydiff); 
         let perentage_days = (Math.floor(daydiff+1)/90)*100;
-        document.getElementById("number3").innerHTML = perentage_days.toFixed(2) + '%';
+        document.getElementById("number3").innerHTML = perentage_days.toFixed(2);
         document.getElementById("progress_bar").style.width = perentage_days+'%';  
     </script>  
 </body>
