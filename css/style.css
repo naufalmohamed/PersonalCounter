@@ -8,7 +8,7 @@
 body {
     font-family: 'Lato', sans-serif;
     padding: 30px;
-    background: #eaebeb;
+    background: url(../bg.jpg);
 }
 
 
@@ -79,3 +79,7 @@ body {
     font-size: 50px;
     color: rgba(255, 255, 255, 0.8);
 }
+
+#heading {
+    font-family: 'Sedgwick Ave', cursive;
+}  
