@@ -16,46 +16,138 @@
 
 <body>
 
-    <h1 class="text-center" id = 'heading'>Retention Counter</h1>
-
+    <h1 class="text-center" id = 'heading'>Personal Counters</h1>
+    <!----Counter 1---->
+    <h2 class="text-left" id = 'heading' alig>Retention Counter</h2>
     <div class="project-counter-wrp">
+        
+
         <ul>
+            
             <li>
                 <i class="fa fa-smile-o"></i>
-                <p id="number1" class="number"></p>
+                <p id="1.1" class="number"></p>
                 <span></span>
                 <p>Current Day</p>
             </li>
             <li>
                 <i class="fa fa-calendar"></i>
-                <p id="number2" class="number"></p>
+                <p id="1.2" class="number"></p>
                 <span></span>
-                <p>Days Left</p>
+                <p>Days To Go</p>
             </li>
             <li>
                 <i class="fa fa-percent"></i>
-                <p id="number3" class="number"></p>
+                <p id="1.3" class="number"></p>
                 <span></span>
                 <p>Progress So Far</p>
             </li>
         </ul>
     </div>
     <div class="w3-light-grey">
-        <div class="w3-pink" style="height:24px" id='progress_bar'></div>
+        <div class="w3-pink" style="height:24px" id="1.4"></div>
     </div>
 
+    <!----Counter 2---->
+    <h2 class="text-left" id = 'heading' alig>No-Cigarette Counter</h2>
+    <div class="project-counter-wrp">
+        
+
+        <ul>
+            
+            <li>
+                <i class="fa fa-smile-o"></i>
+                <p id="2.1" class="number"></p>
+                <span></span>
+                <p>Current Day</p>
+            </li>
+            <li>
+                <i class="fa fa-calendar"></i>
+                <p id="2.2" class="number"></p>
+                <span></span>
+                <p>Days To Go</p>
+            </li>
+            <li>
+                <i class="fa fa-percent"></i>
+                <p id="2.3" class="number"></p>
+                <span></span>
+                <p>Progress So Far</p>
+            </li>
+        </ul>
+    </div>
+    <div class="w3-light-grey">
+        <div class="w3-pink" style="height:24px" id='2.4'></div>
+    </div>
+
+    <!----Counter 3---->
+    <h2 class="text-left" id = 'heading' alig>No-Coffee/Tea Counter</h2>
+    <div class="project-counter-wrp">
+        
+
+        <ul>
+            
+            <li>
+                <i class="fa fa-smile-o"></i>
+                <p id="3.1" class="number"></p>
+                <span></span>
+                <p>Current Day</p>
+            </li>
+            <li>
+                <i class="fa fa-calendar"></i>
+                <p id="3.2" class="number"></p>
+                <span></span>
+                <p>Days To Go</p>
+            </li>
+            <li>
+                <i class="fa fa-percent"></i>
+                <p id="3.3" class="number"></p>
+                <span></span>
+                <p>Progress So Far</p>
+            </li>
+        </ul>
+    </div>
+    <div class="w3-light-grey">
+        <div class="w3-pink" style="height:24px" id='3.4'></div>
+    </div>
+
+
     <script>  
-        var d1 = new Date("01/06/2022");   
-        var d2 = new Date();   
-            
-        var diff = d2.getTime() - d1.getTime();   
-            
-        var daydiff = diff / (1000 * 60 * 60 * 24);   
-        document.getElementById("number1").innerHTML = Math.floor(daydiff+1);
-        document.getElementById("number2").innerHTML = Math.floor(90-daydiff); 
-        let perentage_days = (Math.floor(daydiff+1)/90)*100;
-        document.getElementById("number3").innerHTML = perentage_days.toFixed(2);
-        document.getElementById("progress_bar").style.width = perentage_days+'%';  
+        function prodCalc(date) {
+            var d1 = new Date(date);   
+            var d2 = new Date();   
+            var diff = d2.getTime() - d1.getTime();       
+            return diff / (1000 * 60 * 60 * 24);
+        }
+
+        function percetageDays(date) {
+            var d1 = new Date(date);   
+            var d2 = new Date();           
+            var diff = d2.getTime() - d1.getTime();       
+            var daydiff = diff / (1000 * 60 * 60 * 24); 
+            return (Math.floor(daydiff+1)/90)*100;  
+        }
+
+        //Counter 1
+        let dateOne = '01/06/2022'
+        document.getElementById("1.1").innerHTML = Math.floor(prodCalc(dateOne)+1);
+        document.getElementById("1.2").innerHTML = Math.floor(90-prodCalc(dateOne)); 
+        document.getElementById("1.3").innerHTML = percetageDays(dateOne).toFixed(2);
+        document.getElementById("1.4").style.width = percetageDays(dateOne)+'%';
+
+        //Counter 2
+        let dateTwo = '01/28/2022'
+        document.getElementById("2.1").innerHTML = Math.floor(prodCalc(dateTwo)+1);
+        document.getElementById("2.2").innerHTML = Math.floor(90-prodCalc(dateTwo)); 
+        document.getElementById("2.3").innerHTML = percetageDays(dateTwo).toFixed(2);
+        document.getElementById("2.4").style.width = percetageDays(dateTwo)+'%';
+
+        //Counter 2
+        let dateThree = '01/29/2022'
+        document.getElementById("3.1").innerHTML = Math.floor(prodCalc(dateThree)+1);
+        document.getElementById("3.2").innerHTML = Math.floor(90-prodCalc(dateThree)); 
+        document.getElementById("3.3").innerHTML = percetageDays(dateThree).toFixed(2);
+        document.getElementById("3.4").style.width = percetageDays(dateThree)+'%';
+           
     </script>  
 </body>
 
