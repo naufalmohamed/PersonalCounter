@@ -6,9 +6,7 @@ A simple counter application built using HTML, CSS, and JavaScript.
 
 - [Demo](#demo)
 - [Features](#features)
-- [How to Use](#how-to-use)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Demo
 
